@@ -20,6 +20,6 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/spark-1traffic-app:latest
+        context: .
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/spark-1traffic-app:latest
