@@ -1,0 +1,50 @@
+AI_compute_Case_Study
+This project provides an automated, containerized solution for analyzing traffic data using PySpark. It is designed for scalable processing in a cloud-native environment.
+
+🚀 Project OverviewThe goal of this case study is to process traffic datasets, perform exploratory data analysis, and build predictive models to understand junction traffic dynamics. The project transitions from raw data processing using PySpark to a containerized deployment model using Docker and Kubernetes.
+
+🛠 Tech StackData Processing: Apache Spark (PySpark)
+
+Machine Learning: Random Forest Regressor, Decision Tree Regressor
+
+Containerization: Docker
+
+Orchestration: Kubernetes
+
+CI/CD: GitHub Actions (Automated Pipelines)
+
+Language: Python 3.9📂 Project StructurePlaintext ai_compute_case_study_.py
+
+Main AI & ML Pipeline script
+.github/workflows/deploy.yml # CI/CD Pipeline configuration
+
+ai_compute_case_study_.py # Main AI & ML Pipeline script
+
+Dockerfile # Docker configuration for the app
+
+requirements.txt # Python dependencies
+
+deployment.yaml # Kubernetes deployment manifest
+
+service.yaml # Kubernetes service manifest
+
+1traffic.csv # Dataset 1
+
+Traffic.csv # Dataset 2
+
+🏗 Setup & Installation
+
+Build the Docker Image Ensure you have Docker installed and running. Navigate to the project folder and build the image:Bashdocker build -t spark-traffic-app.
+Kubernetes Deployment Deploy the application to a local cluster (e.g., Docker Desktop/Minikube): kubectl apply -f deployment.yaml kubectl apply -f service.yaml Verify your deployment: kubectl get pods and kubectl get service.
+Run the Application Once the build is complete, you can run the application locally: docker run -it spark-traffic-app
+Deploy to KubernetesTo deploy the application in a cluster environment: Bashkubectl apply -f deployment.yaml kubectl apply -f service.yaml
+🧠 AI/ML Workflow
+
+Spark Session Initialization: Automated configuration of the Spark environment.
+Data Ingestion: Merging and cleaning traffic data from multiple sources.
+Model Training: Random Forest Regressor: Used for high-accuracy prediction of vehicle counts. Decision Tree Regressor: Used as a baseline performance comparison.
+4.Evaluation: Metrics (RMSE) are computed to identify the best-performing model for real-time traffic prediction.
+📈 Model Performance Model RMSE Random Forest 8.2808
+Decision Tree 10.2656 The Random Forest model was selected as the best performer for this deployment.
+
+🤝 Contributing Feel free to open an issue if you encounter bugs or want to suggest improvements to the ML pipeline.

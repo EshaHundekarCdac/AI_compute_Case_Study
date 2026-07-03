@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark-traffic-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark-traffic
+  template:
+    metadata:
+      labels:
+        app: spark-traffic
+    spec:
+      containers:
+      - name: spark-traffic-container
+        image: spark-traffic-app:latest  
+        imagePullPolicy: Never          
+        ports:
+        - containerPort: 80
