@@ -19,5 +19,5 @@ jobs:
           
       - name: Push to Registry
         run: |
-          docker tag spark-1traffic-app ${{ secrets.DOCKERHUB_USERNAME }}/spark-traffic-app:latest
+          docker tag spark-1traffic-app ${{ secrets.DOCKERHUB_USERNAME }}/spark-1traffic-app:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/spark-1traffic-app:latest
